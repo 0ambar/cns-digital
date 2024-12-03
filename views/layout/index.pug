@@ -1,0 +1,21 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title CNS | #{pagina}
+        link(rel="stylesheet", href="/css/app.css")
+        block styles
+    
+    body.min-h-screen.bg-white
+
+        include header
+
+        div(class="md:flex block")
+            div(class="md:w-1/4 w-auto bg-gray-200 p-4")
+                block sidebar
+
+            main(class="md:w-3/4 w-auto mx-auto container mt-10 px-2")
+                block contenido
+
+        block scripts
