@@ -1,0 +1,58 @@
+extends ../layout/index
+
+block sidebar 
+    div.py-10
+        h1.text-xl.my-10.font-bold.text-center Registrar personal
+
+        if mensaje
+            div(class="max-w-md mx-auto my-10")
+                p.bg-green-600.text-white.uppercase.text-xs.text-center.p-2.mb-1.font-bold= mensaje
+
+        else if errors
+            div(class="max-w-md mx-auto my-10")
+                each error in errors
+                    p.bg-red-600.text-white.uppercase.text-xs.text-center.p-2.mb-1.font-bold= error.msg
+
+
+        .mt-8.mx-auto.max-w-md
+            .bg-orange-50.py-8.px-4.shadow
+                form.space-y-5(method="POST" action="/auth/personal/registro")
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="apellidoPaterno") Apellido Paterno
+                        input#apellidoPaterno.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Apellido Paterno" type="text" name="apellidoPaterno" value= usuario? usuario.apellidoPaterno : '')
+                    
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="apellidoMaterno") Apellido Materno
+                        input#apellidoMaterno.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Apellido Materno" type="text" name="apellidoMaterno" value= usuario? usuario.apellidoMaterno : '')
+                    
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="nombre") Nombre
+                        input#nombre.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder= "Nombre" type="text" name="nombre" value= usuario? usuario.nombre : '')
+                        
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="email") Email
+                        input#email.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder= "email" type="email" name="email" value= usuario? usuario.email : '')
+                        
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="password") Contraseña
+                        input#password.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder= "Contraseña" type="password" name="password")
+                    
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="repetir_password") Repetir constraseña
+                        input#repetir_password.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder= "Repite tu contraseña" type="password" name="repetir_password")
+                    
+                    div
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="tipo") Tipo de personal
+                        select#tipo.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(name="tipo")
+                            option(value="") - Seleccione -
+                            - var tipo = ['Enfermero', 'Doctor'];
+                            each t in tipo
+                                option(value= t selected= usuario && (usuario.tipo === t))= t
+
+                    div.flex.items-center.justify-between 
+                        a.text-gray-500.text-xs(href="/auth/login") ¿Ya tienes cuenta? Inicia sesión
+                        a.text-gray-500.text-xs(href="/auth/olvide-password") Olvidé mi password
+
+
+
+                    input(class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 cursor-pointer" type="submit" value="Crear Cuenta")
