@@ -1,8 +1,18 @@
 import express from 'express'; 
 import userRoutes from "./routes/userRoutes.js"
+import db from "./config/db.js"
 
 // Crear la app, contiene toda la informacion del servidor de express (instancia de express)
 const app = express()
+
+// Conexion a la BD
+try {
+    await db.authenticate();
+    db.sync() // ayuda para sincronizar BD con el modelo
+    console.log('Conexion correcta a la base de datos')
+} catch (error) {
+    console.log(error)
+}
 
 
 // Habilitar lectura de datos de formularios
