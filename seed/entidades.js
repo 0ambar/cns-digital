@@ -1,0 +1,37 @@
+
+const entidades = [
+    {entidad: 'Aguascalientes'},
+    {entidad: 'Baja California'},
+    {entidad: 'Baja California Sur'},
+    {entidad: 'Campeche'},
+    {entidad: 'Chiapas'},
+    {entidad: 'Chihuahua'},
+    {entidad: 'Ciudad de México'},
+    {entidad: 'Coahuila'},
+    {entidad: 'Colima'},
+    {entidad: 'Durango'},
+    {entidad: 'Estado de México'},
+    {entidad: 'Guanajuato'},
+    {entidad: 'Guerrero'},
+    {entidad: 'Hidalgo'},
+    {entidad: 'Jalisco'},
+    {entidad: 'Michoacán'},
+    {entidad: 'Morelos'},
+    {entidad: 'Nayarit'},
+    {entidad: 'Nuevo León'},
+    {entidad: 'Oaxaca'},
+    {entidad: 'Puebla'},
+    {entidad: 'Querétaro'},
+    {entidad: 'Quintana Roo'},
+    {entidad: 'San Luis Potosí'},
+    {entidad: 'Sinaloa'},
+    {entidad: 'Sonora'},
+    {entidad: 'Tabasco'},
+    {entidad: 'Tamaulipas'},
+    {entidad: 'Tlaxcala'},
+    {entidad: 'Veracruz'},
+    {entidad: 'Yucatán'},
+    {entidad: 'Zacatecas'}
+];
+
+export default entidades
