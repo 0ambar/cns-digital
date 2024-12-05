@@ -1,0 +1,58 @@
+extends ../layout/index
+
+block contenido 
+    div.py-10
+        h1.text-xl.my-10.font-bold.text-center Mi Perfil
+
+        p.mb-4 Datos de cuenta:
+
+        form(action="/admin/submit-form" method="POST" class="grid grid-cols-2 gap-4")
+            // Column 1
+            div
+            label.block.mb-2.font-bold(for="field1") Field 1
+            input#field1(type="text" name="field1" placeholder="Enter Field 1" class="w-full p-2 border rounded")
+
+            div
+            label.block.mb-2.font-bold(for="field2") Field 2
+            input#field2(type="text" name="field2" placeholder="Enter Field 2" class="w-full p-2 border rounded")
+
+            div
+            label.block.mb-2.font-bold(for="field3") Field 3
+            input#field3(type="text" name="field3" placeholder="Enter Field 3" class="w-full p-2 border rounded")
+
+            div
+            label.block.mb-2.font-bold(for="field4") Field 4
+            input#field4(type="text" name="field4" placeholder="Enter Field 4" class="w-full p-2 border rounded")
+
+            // Column 2
+            div
+            label.block.mb-2.font-bold(for="field5") Field 5
+            input#field5(type="text" name="field5" placeholder="Enter Field 5" class="w-full p-2 border rounded")
+
+            div
+            label.block.mb-2.font-bold(for="field6") Field 6
+            input#field6(type="text" name="field6" placeholder="Enter Field 6" class="w-full p-2 border rounded")
+
+            div
+            label.block.mb-2.font-bold(for="field7") Field 7
+            input#field7(type="text" name="field7" placeholder="Enter Field 7" class="w-full p-2 border rounded")
+
+            div
+            label.block.mb-2.font-bold(for="field8") Field 8
+            input#field8(type="text" name="field8" placeholder="Enter Field 8" class="w-full p-2 border rounded")
+
+            // Submit Button
+            div.col-span-2
+            button(type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600") Submit Form
+
+
+block sidebar 
+    nav
+    ul.list-none.space-y-2
+      li
+        a(href="/admin/profile" class="text-lg block p-2 text-gray-50 rounded font-bold") Perfil
+      li
+        a(href="/admin/management" class="text-lg block p-2 text-gray-50 rounded font-bold") Gestión de Personal de Salud
+      li
+        a(href="/admin/editFormat" class="text-lg block p-2 text-gray-50 rounded font-bold") Editar Formato de Cartilla
+
