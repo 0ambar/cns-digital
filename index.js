@@ -1,6 +1,7 @@
 import express from 'express'; 
 import userRoutes from "./routes/userRoutes.js";
 import staffRoutes from "./routes/staffRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 import db from "./config/db.js";
 
 // Crear la app, contiene toda la informacion del servidor de express (instancia de express)
@@ -33,6 +34,7 @@ app.use(express.static('public'));
 // Routing
 app.use('/auth/pacientes', userRoutes);
 app.use('/auth/personal', staffRoutes);
+app.use('/', adminRoutes);
 
 
 // Definir el puerto y arrancarlo
